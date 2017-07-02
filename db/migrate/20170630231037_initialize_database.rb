@@ -26,8 +26,8 @@ class InitializeDatabase < ActiveRecord::Migration[5.1]
     #comments table
     create_table :comments do |t|
       t.string :body
-      t.belongs_to :users, foreign_key: true
-      t.belongs_to :posts, foreign_key: true
+      t.belongs_to :user, foreign_key: true
+      t.belongs_to :post, foreign_key: true
       t.timestamps
     end
   end

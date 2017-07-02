@@ -27,6 +27,34 @@ post '/sign_in' do
 		redirect '/'
 	end
 end
+
+get '/sign_out' do
+	session[:user_id] = nil
+	redirect '/'
+end
+
+post '/search' do
+	@user = User.find_by(username: params[:search])
+	if @user
+	redirect '/user/' + params[:search]
+	else
+	flash[:alert] = "no users by that name"
+	redirect '/'
+	end
+end
+post '/comment' do
+	Comment.create([{body: params[:comment], }])
+end
+
+get '/user/:user' do
+	@user = User.find_by(username: params[:user].to_sym)
+	erb :profile
+end
+
+get '/post/:post' do
+	@post = Post.find_by(id: params[:post])
+	erb :post
+end
 # get '/user/:id' do
 #   @user = User.find(params[:id])
 #   erb :profile

@@ -10,3 +10,9 @@ User.create([
   {id: 2, email: 'katy@idontknowyouremail.com', password: 'password', username: 'katyp03', bio: 'I\'m pretty drunk right now', hometown: 'New York, NY', avatar_id: 2}
 ])
 # posts
+Post.create([
+  {id: 1, title: 'Hello World', body: 'Hello World', image: '/images/HelloWorld.jpg', user_id: 1 }
+])
+Comment.create([
+  {id: 1, body: 'Hello World', user_id: 2, post_id: 1}
+	])
