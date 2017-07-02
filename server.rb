@@ -42,8 +42,9 @@ post '/search' do
 	redirect '/'
 	end
 end
+
 post '/comment' do
-	Comment.create([{body: params[:comment], }])
+	Comment.create([{body: params[:comment], user_id: @current_user.id}, post_id: params[:post]])
 end
 
 get '/user/:user' do
@@ -55,7 +56,3 @@ get '/post/:post' do
 	@post = Post.find_by(id: params[:post])
 	erb :post
 end
-# get '/user/:id' do
-#   @user = User.find(params[:id])
-#   erb :profile
-# end
