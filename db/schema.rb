@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20170630231037) do
 
-  create_table "avatar", force: :cascade do |t|
+  create_table "avatars", force: :cascade do |t|
     t.string "name"
     t.string "path"
   end
@@ -43,10 +43,10 @@ ActiveRecord::Schema.define(version: 20170630231037) do
     t.string "username"
     t.string "bio"
     t.string "hometown"
-    t.integer "avatars_id"
+    t.integer "avatar_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["avatars_id"], name: "index_users_on_avatars_id"
+    t.index ["avatar_id"], name: "index_users_on_avatar_id"
   end
 
 end

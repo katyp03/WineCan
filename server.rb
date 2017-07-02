@@ -18,8 +18,8 @@ get '/' do
 end
 
 post '/sign_in' do
-	@user = User.find_by(email: params[:username])
-	if @user.password == params[:password]
+	@user = User.find_by(username: params[:username])
+	if @user && @user.password == params[:password]
 		session[:user_id] = @user.id
 		redirect '/'
 	else
