@@ -43,13 +43,21 @@ post '/search' do
 	end
 end
 
+post "/newuser" do
+	User.create(email: params[:email], password: params[:password], username: params[:username], bio: params[:bio], hometown: params[:hometown], avatar_id: params[:avatar_id].to_i)
+	@user = User.find_by(username: params[:username])
+	session[:user_id] = @user.id
+	redirect '/'
+end
+
 post '/newpost' do
 	Post.create(title: params[:title], body: params[:body], image: params[:image], user_id: @current_user.id)
+	@post = Post.find_by(title: params[:title])
+	redirect '/post/' + @post.id.to_s
 end
 
 post '/comment' do
 	Comment.create(body: params[:body], user_id: @current_user.id, post_id: params[:post_id].to_i)
-	puts Comment.all
 	redirect '/post/' + params[:post_id]
 end
 

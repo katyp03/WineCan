@@ -1,0 +1,25 @@
+<% if @current_user %>
+<h2></h2>
+<% else %>
+<h2>Welcome to WineCan!</h2>
+<h3>Sign up</h3>
+<form method="POST" action="/newuser">
+	<label for="email">Email</label>
+	<input type="email" name="email">
+	<label for="username">Username</label>
+	<input type="text" name="username">
+	<label for="password">Password</label>
+	<input type="password" name="password">
+	<h4>Tell us about yourself!</h4>
+	<label for="hometown">Hometown</label>
+	<input type="text" name="hometown">
+	<label for="bio">Bio</label>
+	<textarea name="bio"></textarea>
+	<h4>Pick an Avatar!</h4>
+	<input type="radio" name="avatar_id" value=1>
+	<input type="radio" name="avatar_id" value=2>
+	<input type="radio" name="avatar_id" value=3>
+	<input type="radio" name="avatar_id" value=4>
+	<input type="submit">
+	</form>
+<% end %>
