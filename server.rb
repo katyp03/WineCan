@@ -13,7 +13,9 @@ before do
 end
 
 get '/' do
-  
+  @i =0
+  @last_post = Post.last.id
+  @post = Post.find(@last_post)
   erb :home
 end
 
