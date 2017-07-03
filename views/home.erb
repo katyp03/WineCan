@@ -1,5 +1,10 @@
 <% if @current_user %>
-<h2></h2>
+<h2>Most Recent Posts</h2>
+<% while @i < 10 && @last_post > 0 %>
+<li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %></a></li>
+<% @i = @i + 1 %>
+<% @last_post = @last_post - 1 %>
+<% end %>
 <% else %>
 <h2>Welcome to WineCan!</h2>
 <h3>Sign up</h3>
