@@ -44,7 +44,9 @@ post '/search' do
 end
 
 post '/comment' do
-	Comment.create([{body: params[:comment], user_id: @current_user.id}, post_id: params[:post]])
+	Comment.create(body: params[:body], user_id: @current_user.id, post_id: params[:post_id].to_i)
+	puts Comment.all
+	redirect '/post/' + params[:post_id]
 end
 
 get '/user/:user' do
