@@ -38,9 +38,13 @@ post '/search' do
 	if @user
 	redirect '/user/' + params[:search]
 	else
-	flash[:alert] = "no users by that name"
+	flash[:search] = "no users by that name"
 	redirect '/'
 	end
+end
+
+post '/newpost' do
+	Post.create(title: params[:title], body: params[:body], image: params[:image], user_id: @current_user.id)
 end
 
 post '/comment' do
