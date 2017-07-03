@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+	<title>WineCan</title>
+</head>
+<body>
+<header><div class="container">
+	<div class="row">
+		<div class="col-md-4">
+		<div id="home"><a href="/">
+			<h1>WineCan</h1>
+			<h3>Insert witty tagline here</h3>
+		</a></div>
+		</div>
+		<div class="col-md-4">
+			<form method="POST" action="/search">
+				<label for="search">Search By Username</label>
+				<input type="text" name="search" placeholder="Search By Username">
+				<input type="submit">
+			</form>
+		</div>
+		<div class="col-md-4">
+			<% if @current_user %>
+			<div id="user_control">
+			<h3><%= @current_user.username %></h3>
+			<ul>
+				<li><a href="/user/<%= @current_user.username %>">My Profile</a></li>
+				<li id="newPost">New WineCan</li>
+				<li><a href="/sign_out">Sign Out</a></li>
+			</ul>
+			</div>
+			<% else %>
+			<form method="POST" action="/sign_in">
+				<label for="username">Username</label>
+				<input type="text" name="username">
+				<label for="password">Password</label>
+				<input type="password" name="password">
+				<input type="submit">
+			</form>
+			<% end %>
+			<% if flash[:alert] %>
+			<div class="flashAlert">
+			<%= flash[:alert] %>
+			<% end %>
+		</div>
+	</div>
+</div></header>
+<div class="container">
+	<%= yield %>
+</div>
+<footer><div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			
+		</div>
+		<div class="col-md-4">
+			<p id="contact">Contact Us</p>
+		</div>
+		<div class="col-md-4">
+			<p id="copywrite">WineCan ©<span id=year></span>.</p>
+		</div>
+	</div>
+</div></footer>
+</body>
+</html>
