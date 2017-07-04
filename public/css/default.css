@@ -1,3 +1,4 @@
+/*in header:*/
 #taglineText, #home a:link, a:visited {
 	text-decoration: none;
 	color: #800028;
@@ -22,7 +23,30 @@ header {
 	border-bottom: 3px solid #808080;
 }
 
+#user_control #headerUsername {
+	text-align: right;
+}
+/*end of header*/
+
+/*in home (when user isn't logged in):*/
+#signupForm, #homeWine {
+	float: left;
+}
+
+#signupForm {
+	margin-left: 170px;
+}
+
+#homePic {
+	height: 420px;
+	margin-left: 140px;
+	margin-top: 40px;
+}
+/*end of home (user not logged in)*/
+
+/*in footer:*/
 footer {
 	bottom: 0;
 	position: absolute;
 }
+/*end of footer
