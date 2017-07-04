@@ -34,7 +34,7 @@ header {
 }
 
 #signupForm {
-	margin-left: 110px;
+	margin-left: 80px;
 }
 
 #homePic {
@@ -43,10 +43,33 @@ header {
 	margin-top: 40px;
 }
 
+/*for choosing avatars:*/
 img.avatarPics {
 	height: 60px;
 	width: 60px;
 }
+
+.avGroup {
+	display: inline-block;
+  	text-align: center;
+}
+
+.avGroup label {
+	display: block;
+}
+/*#avButton1 {
+	padding-left: 20px;
+}
+
+#avatarButtons {
+	width: 300px;
+	text-align: center;
+}
+
+#avatarButtons .avButtons {
+	padding-left: 50px;
+}*/
+/*end of avatars*/
 /*end of home (user not logged in)*/
 
 /*in footer:*/
