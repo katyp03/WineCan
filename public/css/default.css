@@ -1,0 +1,28 @@
+#taglineText, #home a:link, a:visited {
+	text-decoration: none;
+	color: #800028;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#home a:hover {
+	text-decoration: underline;
+	color: #660020;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#searchDiv {
+	text-align: center;
+}
+
+#signinForm {
+	text-align: right;
+}
+
+header {
+	border-bottom: 3px solid #808080;
+}
+
+footer {
+	bottom: 0;
+	position: absolute;
+}
