@@ -34,13 +34,18 @@ header {
 }
 
 #signupForm {
-	margin-left: 170px;
+	margin-left: 110px;
 }
 
 #homePic {
 	height: 420px;
-	margin-left: 140px;
+	margin-left: 110px;
 	margin-top: 40px;
+}
+
+img.avatarPics {
+	height: 60px;
+	width: 60px;
 }
 /*end of home (user not logged in)*/
 
