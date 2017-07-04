@@ -6,6 +6,7 @@
 <% @last_post = @last_post - 1 %>
 <% end %>
 <% else %>
+<div id="signupForm">
 <h2>Welcome to WineCan!</h2>
 <h3>Sign up</h3>
 <form method="POST" action="/newuser">
@@ -27,4 +28,8 @@
 	<input type="radio" name="avatar_id" value=4>
 	<input type="submit">
 	</form>
+</div>
+<div id="homeWine">
+<img src="images/wine2.png" id="homePic" />
+</div>
 <% end %>
