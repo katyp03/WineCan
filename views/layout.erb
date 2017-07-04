@@ -1,22 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bellefair|Cinzel|Courgette|Gudea|Permanent+Marker|Poiret+One|Quicksand|Raleway" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+	<link rel="stylesheet" href="css/default.css" type="text/css">
 	<title>WineCan</title>
 </head>
 <body>
-<header><div class="container">
+<header>
+	<div class="container">
 	<div class="row">
 		<div class="col-md-4">
 		<div id="home"><a href="/">
-			<h1>WineCan</h1>
-			<h3>Insert witty tagline here</h3>
-		</a></div>
+			<br />
+			<h1 id="titleText">WineCan</h1></a>
+			<h3 id="taglineText">Insert witty tagline here</h3>
 		</div>
-		<div class="col-md-4">
-			<form method="POST" action="/search">
-				<label for="search">Search By Username</label>
-				<input type="text" name="search" placeholder="Search By Username">
+		</div>
+		<div class="col-md-4" id="searchDiv">
+			<br /><br /><br />
+			<form method="POST" action="/search" id="searchForm">
+				<label for="search">Search By Username</label><br />
+				<input type="text" name="search" placeholder="Username"><br />
 				<input type="submit">
 			</form>
 			<% if flash[:search] %>
@@ -34,13 +40,14 @@
 			</ul>
 			</div>
 			<% else %>
-			<form method="POST" action="/sign_in">
-				<label for="username">Username</label>
-				<input type="text" name="username">
-				<label for="password">Password</label>
-				<input type="password" name="password">
+			<form method="POST" action="/sign_in" id="signinForm">
+				<h3>Log In:</h3>
+				<label for="username">Username</label><br />
+				<input type="text" name="username"><br />
+				<label for="password">Password</label><br />
+				<input type="password" name="password"><br />
 				<input type="submit">
-			</form>
+			</form><br />
 			<% end %>
 			<% if flash[:alert] %>
 			<div class="flashAlert">
