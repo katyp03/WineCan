@@ -10,7 +10,7 @@
 </div>
 <label for="newImage" class="editFormLabel">New Image</label>
 <input type="text" name="newImage" class="editForm" value="<%= @post.image %>">
-<div id="postAllText">
+<div id="bodyDiv">
 	<p class="postContent" id="postBody"><%= @post.body %></p>
 	<label for="newBody" class="editFormLabel">New Body</label>
 	<textarea name="newBody" class="editForm"><%= @post.body %></textarea>
@@ -18,6 +18,9 @@
 	<% if @user == @current_user %>
 	<p class="postContent" id="editButton">Edit this post</p>
 	<% end %>
+</div>
+</form>
+  <div id="commentDiv">
 	<% @post.comments.each do |comment| %>
 	<% @comment_user = User.find_by(id: comment.user_id) %>
 		<li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a>
