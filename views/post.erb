@@ -11,11 +11,11 @@
 <div id="commentDiv"
 	<% @post.comments.each do |comment| %>
 	<% @comment_user = User.find_by(id: comment.user_id) %>
-		<li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></li>
+		<li><span id="commentText"><%= comment.body %> - </span><span id="commentUsername"><a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></span></li>
 <% end %>
 <% if @current_user %>
 	<form method="POST" action="/comment">
-		<label for="comment">What do you think?</label>
+		<label for="comment"><span id="askComment">What do you think?</span></label>
 		<textarea name="body" id="comment"></textarea>
 		<input type="text" class="hidden" name="post_id" value="<%= @post.id %>">
 		<input type="submit">

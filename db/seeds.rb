@@ -1,11 +1,11 @@
 # seeds.rb
 # avatars 
 Avatar.create([
-  {id: 1, name: 'wineCan', path: '/images/wine5.JPG'},
-  {id: 2, name: 'wineGlass', path: '/images/wine6.jpg'},
-  {id: 3, name: 'wineCan', path: '/images/wine7.jpg'},
-  {id: 4, name: 'wineGlass', path: '/images/wine9.png'},
-  {id: 5, name: 'wineCan', path: '/images/wine10.png'}
+  {id: 1, name: 'twoGlass', path: '/images/wine5.JPG'},
+  {id: 2, name: 'grapes', path: '/images/wine6.jpg'},
+  {id: 3, name: 'fireworkWine', path: '/images/wine7.jpg'},
+  {id: 4, name: 'bottleGlass', path: '/images/wine9.png'},
+  {id: 5, name: 'happyGlass', path: '/images/wine10.png'}
 ])
 # Create our users
 User.create([

@@ -1,9 +1,11 @@
-var newCan;
+var newCanBtn,
+	newCanFrm;
 document.addEventListener("DOMContentLoaded", function() {
-  	var newCan = document.getElementById('newPost');
-  	newCan.addEventListener("click", function() {
-  		newCan.classList.remove("off");
-  		newCan.classList.add("on");
+  	var newCanBtn = document.getElementById('newPost');
+  	var newCanFrm = document.getElementById('postNew');
+  	newCanBtn.addEventListener("click", function() {
+  		newCanFrm.classList.remove("off");
+  		newCanFrm.classList.add("on");
   	});
 });
 
@@ -13,7 +15,7 @@ var newSubmit,
 document.addEventListener("DOMContentLoaded", function(){
 	newSubmit = document.getElementById('newSubmit');
 	exitButton = document.getElementById('exitButton');
-	myModal = document.getElementById('newCanForm');
+	myModal = document.getElementById('postNew');
 	exitButton.addEventListener("click", function(){
 		myModal.className = "off";
 	});
