@@ -1,7 +1,7 @@
 <div id="profileDiv">
-<h2><%= @user.username %></h2>
-<p><%= @user.hometown %></p>
-<p><%= @user.bio %></p>
+<h2 id="profileUserText"><%= @user.username %></h2>
+<p id="profileHometownText"><%= @user.hometown %></p>
+<p id="profileBioText"><%= @user.bio %></p>
 <ul>
 <% @user.posts.each do |post| %>
 <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
