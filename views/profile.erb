@@ -1,10 +1,21 @@
 <div id="profileDiv">
+
 <h2 id="profileUserText"><%= @user.username %></h2>
-<p id="profileHometownText"><%= @user.hometown %></p>
-<p id="profileBioText"><%= @user.bio %></p>
+<% if @user == @current_user %>
+<p id="editButton" class="content">edit profile</p>
+<% end %>
+<form method="POST" action="/user/<%= @user.username %>/update">
+<p id="profileHometownText" class="content"><%= @user.hometown %></p>
+<label for="newHometown" class="bioFormLabel">Hometown</label>
+<input type="text" name="newHometown" class="editForm" value="<%= @user.hometown %>">
+<p id="profileBioText" class="content"><%= @user.bio %></p>
+<label for="newBio" class="bioFormLabel">Bio</label>
+<textarea name="newBio" class="editForm"><%= @user.bio %></textarea>
+<input type="submit" class="editForm">
+</form>
 <ul>
 <% @user.posts.each do |post| %>
 <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>
-</ul>
 <% end %>
+</ul>
 </div>

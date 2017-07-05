@@ -69,6 +69,11 @@ get '/user/:user' do
 	@user = User.find_by(username: params[:user].to_sym)
 	erb :profile
 end
+post '/user/:user/update' do
+	@user = User.find_by(username: params[:user])
+	@user.update(hometown: params[:newHometown], bio: params[:newBio])
+	redirect '/user/' + @user.username
+end 
 
 get '/post/:post' do
 	@post = Post.find_by(id: params[:post])
@@ -78,6 +83,7 @@ end
 post '/post/:post/update' do
 	@post = Post.find_by(id: params[:post])
 	@post.update(title: params[:newTitle], image: params[:newImage], body: params[:newBody])
+	redirect '/post/' + @post.id
 end
 get '/post/:post/delete' do
 	@post = Post.find_by(id: params[:post])
@@ -89,5 +95,5 @@ get '/comment/:comment/delete' do
 	@comment = Comment.find_by(id: params[:comment])
 	@post = Post.find_by(id: @comment.post_id).id
 	@comment.destroy
-	redirect '/post/' + @post
+	redirect '/post/' + @post.to_s
 end
