@@ -83,7 +83,7 @@ end
 post '/post/:post/update' do
 	@post = Post.find_by(id: params[:post])
 	@post.update(title: params[:newTitle], image: params[:newImage], body: params[:newBody])
-	redirect '/post/' + @post.id
+	redirect '/post/' + @post.id.to_s
 end
 get '/post/:post/delete' do
 	@post = Post.find_by(id: params[:post])

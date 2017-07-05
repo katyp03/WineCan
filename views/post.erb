@@ -1,5 +1,6 @@
 <% if @user == @current_user %>
-<p class="delete"><a href="/post/<%= @post.id %>/delete">delete this post</a></p>
+<p class="content" id="editButton">edit</p>
+<p class="delete"><a href="/post/<%= @post.id %>/delete">delete</a></p>
 <% end %>
 <form method="POST" action="/post/<%= @post.id %>/update">
 <h2 class="content" id="postTitle"><%= @post.title %></h2>
@@ -15,9 +16,6 @@
 	<label for="newBody" class="editFormLabel">New Body</label>
 	<textarea name="newBody" class="editForm"><%= @post.body %></textarea>
 	<input type="submit" class="editForm">
-	<% if @user == @current_user %>
-	<p class="postContent" id="editButton">Edit this post</p>
-	<% end %>
 </div>
 </form>
   <div id="commentDiv">
