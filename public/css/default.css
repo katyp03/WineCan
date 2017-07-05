@@ -63,10 +63,11 @@ input {
 	border-bottom: 1px solid #800028;
 }
 
-input[type=submit] {
+input[type=submit], #exitButton {
 	border: 1px solid #808080;
 	border-radius: 30px;
 	margin-top: 3px;
+	background-color: white;
 }
 
 .hidden {
@@ -124,6 +125,28 @@ img.avatarPics {
 /*end of home (user not logged in)*/
 
 /*in home (when user IS logged in):*/
+/*in new post modal:*/
+#newPost.off {
+	display: none;
+}
+
+#newPost.on {
+	width: 530px;
+	height: 300px;
+	padding-top: 10px;
+	padding-bottom: 30px;
+	font-size: 22px;
+	text-align: center;
+	border: 2px solid #808080;
+	display: inline-block;
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin-left:-265px;
+	margin-top:-150px;
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
 #newText, #recentText {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 25px;
@@ -134,15 +157,7 @@ img.avatarPics {
 	font-family: 'Jura', sans-serif;
 	font-size: 18px;
 }
-
-.postNew, #recentDiv {
-	float: left;
-}
-
-.postNew {
-	margin-left: 120px;
-	width: 250px;
-}
+/*end of new post modal*/
 
 #recentDiv {
 	margin-left: 120px;
@@ -205,8 +220,12 @@ img.avatarPics {
 	width: 60px;
 }
 
-#postImg, #postAllText {
+#postImg, #bodyDiv, #commentDiv {
 	float: left;
+}
+
+#commentDiv {
+	clear: left;
 }
 
 #postImg {
@@ -214,7 +233,7 @@ img.avatarPics {
 	margin-left: 80px;
 }
 
-#postAllText {
+#bodyDiv {
 	width: 400px;
 }
 
