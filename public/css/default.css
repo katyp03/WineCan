@@ -126,11 +126,11 @@ img.avatarPics {
 
 /*in home (when user IS logged in):*/
 /*in new post modal:*/
-#newPost.off {
+#postNew.off {
 	display: none;
 }
 
-#newPost.on {
+#postNew.on {
 	width: 530px;
 	height: 300px;
 	padding-top: 10px;
@@ -153,7 +153,7 @@ img.avatarPics {
 	color: #800028;
 }
 
-#newPost label {
+#postNew label {
 	font-family: 'Jura', sans-serif;
 	font-size: 18px;
 }
