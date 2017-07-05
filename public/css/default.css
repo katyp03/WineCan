@@ -13,13 +13,14 @@
 
 #searchDiv {
 	text-align: center;
+	font-size: 22px;
 }
 
 #signinForm {
 	text-align: right;
 }
 
-#signinForm label, #searchForm label {
+#signinForm label {
 	font-family: 'Jura', sans-serif;
 	font-size: 18px;
 	color: #800028;
@@ -39,7 +40,7 @@ header {
 }
 
 h3.marker {
-	margin-bottom: 5px;
+	margin-bottom: 1px;
 }
 
 #user_control, #user_control a:link, a:visited {
@@ -54,6 +55,24 @@ h3.marker {
 	color: #660020;
 }
 /*end of header*/
+
+/*for all input sections of forms:*/
+input {
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #800028;
+}
+
+input[type=submit] {
+	border: 1px solid #808080;
+	border-radius: 30px;
+	margin-top: 3px;
+}
+
+.hidden {
+	display: none;
+}
+/*end of form input styling*/
 
 /*in home (when user isn't logged in):*/
 #signupForm #welcome {
@@ -155,12 +174,34 @@ img.avatarPics {
 }
 /*end of profile page*/
 
+/*in post page:*/
+#postTitle {
+	color: #800028;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 30px;
+}
+
+#postBody {
+	font-family: 'Antic', sans-serif;
+}
+/*end of post page styling*/
+
 /*in footer:*/
-footer {
+footer .container {
+	width: 100%;
 	bottom: 0;
 	position: absolute;
 	font-family: 'Amatic SC', cursive;
 	font-size: 30px;
-	text-align: center;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	text-align: left;
+	border-top: 3px solid #808080;
+	background-color: rgba(255, 230, 230, 0.3);
+}
+
+#contact, #copywrite {
+	margin-top: 7px;
+	margin-bottom: 7px;
 }
 /*end of footer

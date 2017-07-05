@@ -1,6 +1,6 @@
-<h2><%= @post.title %></h2>
+<h2 id="postTitle"><%= @post.title %></h2>
 <img src="<%= @post.image %>">
-<p><%= @post.body %></p>
+<p id="postBody"><%= @post.body %></p>
 <% @post.comments.each do |comment| %>
 <li><%= comment.body %> - <a href='/user/<%= User.find_by(id: comment.user_id).username %>'><%= User.find_by(id: comment.user_id).username %></a></li>
 <% end %>
