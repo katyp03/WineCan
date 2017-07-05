@@ -1,4 +1,7 @@
 /*in header:*/
+a:hover {
+	cursor: url('/images/Corkscrew.png'), auto;
+}
 #taglineText, #home a:link, a:visited {
 	text-decoration: none;
 	color: #800028;
