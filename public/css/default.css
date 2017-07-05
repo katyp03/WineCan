@@ -50,7 +50,7 @@ h3.marker {
 	color: #800028;
 }
 
-#user_control a:hover {
+#newPost:hover, #user_control a:hover {
 	text-decoration: underline;
 	color: #660020;
 }
@@ -215,26 +215,52 @@ img.avatarPics {
 	font-family: 'Quicksand', sans-serif;
 }
 
+#commentText {
+	font-family: 'Julius Sans One', sans-serif;
+	color: #660020;
+}
+
+#commentUsername a:link, a:visited {
+	font-family: 'Quicksand', sans-serif;
+	text-decoration: none;
+	color: #800000;
+}
+
+#commentUsername a:hover {
+	text-decoration: underline;
+	color: #330000;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#askComment {
+	font-family: 'Quicksand', sans-serif;
+}
+
 .avImg {
 	height: 60px;
 	width: 60px;
 }
 
-#postImg, #bodyDiv, #commentDiv {
-	float: left;
-}
-
-#commentDiv {
-	clear: left;
+#bodyDiv, #commentDiv {
+	float: right;
+	border: 2px solid black;
+	/*clear: right;*/
 }
 
 #postImg {
-	width: 600px;
+	width: 470px;
+	height: 470px;
 	margin-left: 80px;
+	float: left;
+	border: 2px solid black;
+}
+
+#commentDiv {
+	width: 350px;
 }
 
 #bodyDiv {
-	width: 400px;
+	width: 450px;
 }
 
 #postPic {
