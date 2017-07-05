@@ -1,18 +1,20 @@
 <div id="profileDiv">
-
-<h2 id="profileUserText"><%= @user.username %></h2>
+	<h2 id="profileUserText"><%= @user.username %></h2>
+	<form method="POST" action="/user/<%= @user.username %>/update">
+		<p id="profileHometownText" class="content"><%= @user.hometown %></p>
+		<label for="newHometown" class="bioFormLabel">Hometown</label><br />
+		<input type="text" name="newHometown" class="editForm" value="<%= @user.hometown %>"><br /><br />
+		<p id="profileBioText" class="content"><%= @user.bio %></p>
+		<label for="newBio" class="bioFormLabel">Bio</label><br />
+		<textarea name="newBio" class="editForm"><%= @user.bio %></textarea><br /><br />
+		<input type="submit" class="editForm">
+	</form>
 <% if @user == @current_user %>
-<p id="editButton" class="content">edit profile</p>
+<br /><br /><br />
+<p id="editButton" class="content">Edit Profile</p>
 <% end %>
-<form method="POST" action="/user/<%= @user.username %>/update">
-<p id="profileHometownText" class="content"><%= @user.hometown %></p>
-<label for="newHometown" class="bioFormLabel">Hometown</label>
-<input type="text" name="newHometown" class="editForm" value="<%= @user.hometown %>">
-<p id="profileBioText" class="content"><%= @user.bio %></p>
-<label for="newBio" class="bioFormLabel">Bio</label>
-<textarea name="newBio" class="editForm"><%= @user.bio %></textarea>
-<input type="submit" class="editForm">
-</form>
+</div>
+<div id="userRecents">
 <ul>
 <% @user.posts.each do |post| %>
 <li><a href="/post/<%= post.id %>"><%= post.title %></a></li>

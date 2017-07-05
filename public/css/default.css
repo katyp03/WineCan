@@ -175,29 +175,37 @@ img.avatarPics {
 	margin-left: 120px;
 }
 
-#recentDiv li a:link {
+#recentDiv li a:link, #userRecents li a:link {
 	text-align: left;
 	text-decoration: none;
 	color: #800028;
 	font-family: 'Quicksand', sans-serif;
 }
 
-#recentDiv li a:visited {
+#recentDiv li a:visited, #userRecents li a:visited {
 	color: #660020;
 	font-family: 'Quicksand', sans-serif;
 }
 
 #recentDiv li a:hover {
 	text-decoration: underline;
-	color: #660020;
+	/*color: #660020;*/
 	font-family: 'Quicksand', sans-serif;
 }
 /*end of home (when user IS logged in)*/
 
 /*in profile page:*/
-#profileDiv {
+#profileDiv, #userRecents {
 	float: left;
 	margin-left: 100px;
+}
+
+#profileDiv {
+	width: 350px;
+}
+
+#userRecents {
+	width: 350px;
 }
 
 #profileUserText {
@@ -218,6 +226,7 @@ img.avatarPics {
 	display: none;
 }
 .bioFormLabel {
+	font-family: 'Quicksand', sans-serif;
 	display: none;
 }
 /*end of profile page*/
@@ -256,14 +265,14 @@ img.avatarPics {
 	font-size: 22px;
 }
 
-#deleteComment a:link {
+#deleteComment a:link, #editButton {
 	font-family: 'Amatic SC', cursive;
 	text-decoration: none;
 	color: #800000;
 	font-size: 24px;
 }
 
-#deleteComment a:hover {
+#deleteComment a:hover , #editButton:hover {
 	font-family: 'Amatic SC', cursive;
 	text-decoration: underline;
 	color: #330000;
