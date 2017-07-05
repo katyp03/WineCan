@@ -5,8 +5,10 @@
 <div id="postImg">
 	<img id="postPic" src="<%= @post.image %>">
 </div>
-<div id="postAllText">
+<div id="bodyDiv">
 	<p id="postBody"><%= @post.body %></p>
+</div>
+<div id="commentDiv"
 	<% @post.comments.each do |comment| %>
 	<% @comment_user = User.find_by(id: comment.user_id) %>
 		<li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></li>
