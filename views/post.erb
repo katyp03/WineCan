@@ -1,30 +1,30 @@
-<<<<<<< HEAD
 <% if @user == @current_user %>
 <p class="delete"><a href="/post/<%= @post.id %>/delete">delete this post</a></p>
 <% end %>
-<h2 id="postTitle"><%= @post.title %></h2>
-<p>by <%= @user.username %>
-<img src="<%= @post.image %>">
-<p id="postBody"><%= @post.body %></p>
-=======
-
-<%= if User.find_by(@post.user_id).id == @current_user.id %>
-<p class="delete"><a href="/post/<%= @post.id %>/delete">delete this post</a></p>
-<% end %>
-<h2 id="postTitle"><%= @post.title %></h2>
-<div id="postImg">
+<form method="POST" action="/post/<%= @post.id %>/update">
+<h2 class="postContent" id="postTitle"><%= @post.title %></h2>
+<label for = "newTitle" class="editFormLabel">New Title</label>
+<input type="text" name="newTitle" class="editForm" value="<%= @post.title %>">
+<div class="postContent" id="postImg">
 	<img id="postPic" src="<%= @post.image %>">
 </div>
-<div id="postAllText"
-	<p id="postBody"><%= @post.body %></p>
+<label for="newImage" class="editFormLabel">New Image</label>
+<input type="text" name="newImage" class="editForm" value="<%= @post.image %>">
+<div id="postAllText">
+	<p class="postContent" id="postBody"><%= @post.body %></p>
+	<label for="newBody" class="editFormLabel">New Body</label>
+	<textarea name="newBody" class="editForm"><%= @post.body %></textarea>
+	<input type="submit" class="editForm">
+	<% if @user == @current_user %>
+	<p class="postContent" id="editButton">Edit this post</p>
+	<% end %>
 	<% @post.comments.each do |comment| %>
 	<% @comment_user = User.find_by(id: comment.user_id) %>
-		<li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></li>
->>>>>>> 6a993f59c3c2268f07e9343cf8498dff3d7f4ae0
-<% @post.comments.each do |comment| %>
-<% @comment_user = User.find_by(id: comment.user_id) %>
-<li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></li>
-
+		<li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a>
+		<% if @comment_user == @current_user %>
+		<a href="/comment/<%= comment.id %>/delete">delete comment</a>
+		<% end %>
+		</li>
 <% end %>
 <% if @current_user %>
 	<form method="POST" action="/comment">
