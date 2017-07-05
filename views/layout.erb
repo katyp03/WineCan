@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Amatic+SC|Permanent+Marker|Jura|Antic|Quicksand|Julius+Sans+One" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.css">
+	<link rel="stylesheet" href="/css/default.css" type="text/css">
+	<title>WineCan</title>
+</head>
+<body>
+<header>
+	<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+		<div id="home"><a href="/">
+			<br />
+			<h1 id="titleText">WineCan</h1></a>
+			<h3 id="taglineText">Come wine about it.</h3>
+		</div>
+		</div>
+		<div class="col-md-4" id="searchDiv">
+			<br /><br />
+			<form method="POST" action="/search" id="searchForm">
+				<label for="search" class="marker">Search By Username:</label><br />
+				<input type="text" name="search" placeholder="Username"><br />
+				<input type="submit">
+			</form>
+			<% if flash[:search] %>
+			<%= flash[:search] %>
+			<% end %>
+		</div>
+		<div class="col-md-4">
+			<% if @current_user %>
+			<div id="user_control">
+				<h3 id="headerUsername"><%= @current_user.username %></h3>
+					<ul>
+						<li><a href="/user/<%= @current_user.username %>">My Profile</a></li>
+						<li id="newPost">New WineCan</li>
+						<li><a href="/sign_out">Sign Out</a></li>
+					</ul>
+			</div>
+			<% else %>
+			<form method="POST" action="/sign_in" id="signinForm">
+				<h3 class="marker">Log In:</h3>
+				<label for="username" class="hidden">Username</label><br />
+				<input type="text" name="username" placeholder="Username"><br />
+				<label for="password" class="hidden">Password</label><br />
+				<input type="password" name="password" placeholder="Password"><br />
+				<input type="submit">
+			</form><br />
+			<% end %>
+			<% if flash[:alert] %>
+			<div class="flashAlert">
+			<%= flash[:alert] %>
+			<% end %>
+		</div>
+	</div>
+</div></header>
+<% if @current_user %>
+<div id="newPost" class="postNew">
+	<h3 id="newText">New WineCan</h3>
+	<form method="POST" action="/newpost">
+	<label for="title" class="hidden">Title</label><br />
+	<input type="text" name="title" placeholder="Title"><br />
+	<label for="image" class="hidden">Image</label><br />
+	<input type="text" name="image" placeholder="Link To Image"><br />
+	<label for="body" class="hidden">Body</label><br />
+	<textarea name="body" placeholder="Post Body"></textarea><br />
+	<input type="submit">
+	</form>
+</div>
+<% end %>
+<div class="container">
+	<%= yield %>
+</div>
+<footer><div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			
+		</div>
+		<div class="col-md-4">
+			<p id="contact">Contact Us</p>
+		</div>
+		<div class="col-md-4">
+			<p id="copywrite">WineCan ©<span id=year></span>.</p>
+		</div>
+	</div>
+</div></footer>
+</body>
+</html>

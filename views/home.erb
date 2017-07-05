@@ -1,0 +1,56 @@
+<% if @current_user %>
+<div id="recentDiv">
+	<h2 id="recentText">Most Recent Posts</h2>
+<% while @i < 10 && @last_post > 0 %>
+	<li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %></a></li>
+<% @i = @i + 1 %>
+<% @last_post = @last_post - 1 %>
+</div>
+<% end %>
+<% else %>
+<div id="signupForm">
+<h2 id="welcome">Welcome to WineCan!</h2>
+<h3 class="marker">Sign up</h3>
+<form method="POST" action="/newuser">
+	<label for="email" class="hidden">Email</label><br />
+	<input type="email" name="email" placeholder="Email"><br />
+	<label for="username" class="hidden">Username</label><br />
+	<input type="text" name="username" placeholder="Username"><br />
+	<label for="password" class="hidden">Password</label><br />
+	<input type="password" name="password" placeholder="Password"><br /><br />
+	<h3 class="marker">Tell us about yourself!</h3>
+	<label for="hometown" class="hidden">Hometown</label><br />
+	<input type="text" name="hometown" placeholder="Hometown"><br />
+	<label for="bio" class="hidden">Bio</label><br />
+	<textarea name="bio" placeholder="Your Bio"></textarea><br /><br >
+	<h3 class="marker">Pick an Avatar!</h3>
+	<div id="avAssign">
+  		<div class="avGroup">
+    		<label for="avRadio1"><img src="<%= Avatar.find_by(id: 1).path %>" class="avatarPics" /></label>
+    		<input type="radio" name="avatar_id" value=1 id="avRadio1" />
+  		</div>
+  		<div class="avGroup">
+    		<label for="avRadio2"><img src="<%= Avatar.find_by(id: 2).path %>" class="avatarPics" /></label>
+    		<input type="radio" name="avatar_id" value=2 id="avRadio2" />
+  		</div>
+  		<div class="avGroup">
+    		<label for="avRadio3"><img src="<%= Avatar.find_by(id: 3).path %>" class="avatarPics" /></label>
+    		<input type="radio" name="avatar_id" value=3 id="avRadio3" />
+  		</div>
+  		<div class="avGroup">
+    		<label for="avRadio4"><img src="<%= Avatar.find_by(id: 4).path %>" class="avatarPics" /></label>
+    		<input type="radio" name="avatar_id" value=4 id="avRadio4" />
+  		</div>
+  		<div class="avGroup">
+    		<label for="avRadio5"><img src="<%= Avatar.find_by(id: 5).path %>" class="avatarPics" /></label>
+    		<input type="radio" name="avatar_id" value=5 id="avRadio5" />
+  		</div>
+	</div>
+	<br />
+	<input type="submit">
+	</form>
+</div>
+<div id="homeWine">
+<img src="images/wine2.png" id="homePic" />
+</div>
+<% end %>
