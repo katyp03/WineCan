@@ -240,6 +240,14 @@ img.avatarPics {
 #postPic {
 	width: 500px;
 }
+
+.editForm {
+	display: none;
+}
+
+.editFormLabel {
+	display: none;
+}
 /*end of post page styling*/
 
 /*in footer:*/
@@ -260,4 +268,6 @@ footer .container {
 	margin-top: 7px;
 	margin-bottom: 7px;
 }
+
+
 /*end of footer

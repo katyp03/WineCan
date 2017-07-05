@@ -75,7 +75,9 @@ get '/post/:post' do
 	@user = User.find_by(id: @post.user_id)
 	erb :post
 end
-
+get '/post/:post/update' do
+	@post = Post.find_by(id: params[:post])
+end
 get '/post/:post/delete' do
 @post = Post.find_by(id: params[:post])
 @user = User.find_by(id: @post.user_id).username
