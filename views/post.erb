@@ -14,7 +14,6 @@
 <% @post.comments.each do |comment| %>
 <% @comment_user = User.find_by(id: comment.user_id) %>
 <li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></li>
-
 <% end %>
 <% if @current_user %>
 	<form method="POST" action="/comment">
