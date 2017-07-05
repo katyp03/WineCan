@@ -57,18 +57,6 @@ img.avatarPics {
 .avGroup label {
 	display: block;
 }
-/*#avButton1 {
-	padding-left: 20px;
-}
-
-#avatarButtons {
-	width: 300px;
-	text-align: center;
-}
-
-#avatarButtons .avButtons {
-	padding-left: 50px;
-}*/
 /*end of avatars*/
 /*end of home (user not logged in)*/
 
@@ -76,5 +64,8 @@ img.avatarPics {
 footer {
 	bottom: 0;
 	position: absolute;
+	font-family: 'Amatic SC', cursive;
+	font-size: 30px;
+	text-align: center;
 }
 /*end of footer
