@@ -72,5 +72,6 @@ end
 
 get '/post/:post' do
 	@post = Post.find_by(id: params[:post])
+	
 	erb :post
 end
