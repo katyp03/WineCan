@@ -148,6 +148,13 @@ img.avatarPics {
 }
 /*end of home (when user IS logged in)*/
 
+/*in profile page:*/
+#profileDiv {
+	float: left;
+	margin-left: 100px;
+}
+/*end of profile page*/
+
 /*in footer:*/
 footer {
 	bottom: 0;
