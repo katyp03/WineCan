@@ -1,24 +1,27 @@
 <% if @user == @current_user %>
-<p class="content" id="editButton">edit</p>
-<p class="delete"><a href="/post/<%= @post.id %>/delete">delete</a></p>
+<p class="content" id="editButton">Edit  </p>  /  
+<p class="delete" id="deleteButton"><a href="/post/<%= @post.id %>/delete">  Delete</a></p>
 <% end %>
 <form method="POST" action="/post/<%= @post.id %>/update">
 <h2 class="content" id="postTitle"><%= @post.title %></h2>
-<label for = "newTitle" class="editFormLabel">New Title</label>
-<input type="text" name="newTitle" class="editForm" value="<%= @post.title %>">
+<label for = "newTitle" class="editFormLabel">New Title</label><br />
+<input type="text" name="newTitle" class="editForm" value="<%= @post.title %>"><br /><br />
 <div class="content" id="postImg">
 	<img id="postPic" src="<%= @post.image %>">
 </div>
-<label for="newImage" class="editFormLabel">New Image</label>
-<input type="text" name="newImage" class="editForm" value="<%= @post.image %>">
+<label for="newImage" class="editFormLabel">New Image</label><br />
+<input type="text" name="newImage" class="editForm" value="<%= @post.image %>"><br /><br />
+<label for="newBody" class="editFormLabel">New Body</label><br />
+<textarea name="newBody" class="editForm"><%= @post.body %></textarea><br /><br />
+<input type="submit" class="editForm">
 <div id="bodyDiv">
 	<p class="content" id="postBody"><%= @post.body %></p>
-	<label for="newBody" class="editFormLabel">New Body</label>
-	<textarea name="newBody" class="editForm"><%= @post.body %></textarea>
-	<input type="submit" class="editForm">
+	<!-- <label for="newBody" class="editFormLabel">New Body</label><br />
+	<textarea name="newBody" class="editForm"><%= @post.body %></textarea><br />
+	<input type="submit" class="editForm"> -->
 </div>
 </form>
-  <div id="commentDiv">
+  <div id="commentDiv" class="content">
 	<% @post.comments.each do |comment| %>
 	<% @comment_user = User.find_by(id: comment.user_id) %>
 		<li><span id="commentText"><%= comment.body %> - </span><span id="commentUsername"><a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></span>

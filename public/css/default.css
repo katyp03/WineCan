@@ -135,7 +135,7 @@ img.avatarPics {
 
 #postNew.on {
 	width: 400px;
-	height: 400px;
+	height: 340px;
 	padding-top: 10px;
 	padding-bottom: 30px;
 	font-size: 22px;
@@ -154,7 +154,7 @@ img.avatarPics {
 
 #postNew.on #enterBody {
   	width: 300px;
-  	height: 130px;
+  	height: 65px;
   	resize: none;
 }
 
@@ -192,7 +192,6 @@ img.avatarPics {
 
 #recentDiv li a:hover {
 	text-decoration: underline;
-	/*color: #660020;*/
 	font-family: 'Quicksand', sans-serif;
 }
 /*end of home (when user IS logged in)*/
@@ -200,11 +199,12 @@ img.avatarPics {
 /*in profile page:*/
 #profileDiv, #userRecents {
 	float: left;
-	margin-left: 100px;
+	margin-left: 160px;
+	margin-top: 50px;
 }
 
 #profileDiv {
-	width: 350px;
+	width: 300px;
 }
 
 #userRecents {
@@ -228,9 +228,13 @@ img.avatarPics {
 .bioForm {
 	display: none;
 }
-.bioFormLabel {
+.editFormLabel {
 	font-family: 'Quicksand', sans-serif;
 	display: none;
+}
+
+#profileUserText, #profileAv {
+	display: inline-block;
 }
 /*end of profile page*/
 
@@ -239,11 +243,13 @@ img.avatarPics {
 	color: #800028;
 	font-family: 'Julius Sans One', sans-serif;
 	font-size: 30px;
+	margin-bottom: 0px;
 }
 
 #postBody {
 	font-family: 'Quicksand', sans-serif;
 	font-size: 22px;
+	margin-top: 0px;
 }
 
 #commentText {
@@ -268,14 +274,14 @@ img.avatarPics {
 	font-size: 22px;
 }
 
-#deleteComment a:link, #editButton {
+#deleteComment a:link, #deleteComment a:visited, #editButton, #deleteButton a:link, #deleteButton a:visited {
 	font-family: 'Amatic SC', cursive;
 	text-decoration: none;
 	color: #800000;
 	font-size: 24px;
 }
 
-#deleteComment a:hover , #editButton:hover {
+#deleteComment a:hover , #editButton:hover, #deleteButton a:hover {
 	font-family: 'Amatic SC', cursive;
 	text-decoration: underline;
 	color: #330000;
@@ -289,15 +295,13 @@ img.avatarPics {
 
 #bodyDiv, #commentDiv {
 	float: right;
-	/*border: 2px solid black;*/
 }
 
 #postImg {
-	width: 470px;
-	height: 470px;
+	width: 430px;
+	height: 430px;
 	margin-left: 80px;
 	float: left;
-	/*border: 2px solid black;*/
 }
 
 #commentDiv {
@@ -311,7 +315,7 @@ img.avatarPics {
 }
 
 #postPic {
-	width: 500px;
+	width: 420px;
 }
 
 .editForm {
@@ -320,6 +324,11 @@ img.avatarPics {
 
 .editFormLabel {
 	display: none;
+}
+
+#editButton, #deleteButton {
+	display: inline-block;
+	margin-bottom: 5px;
 }
 /*end of post page styling*/
 
@@ -332,12 +341,12 @@ footer .container {
 	font-size: 30px;
 	padding-top: 7px;
 	padding-bottom: 7px;
-	text-align: left;
+	text-align: center;
 	border-top: 3px solid #808080;
 	background-color: rgba(255, 230, 230, 0.3);
 }
 
-#contact, #copywrite {
+#copywrite {
 	margin-top: 7px;
 	margin-bottom: 7px;
 }
