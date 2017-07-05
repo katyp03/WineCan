@@ -1,8 +1,11 @@
 # seeds.rb
 # avatars 
 Avatar.create([
-  {id: 1, name: 'wineCan', path: '/images/winecan.jpg'},
-  {id: 2, name: 'wineGlass', path: '/images/wineglass.jpg'},
+  {id: 1, name: 'wineCan', path: '/images/wine5.JPG'},
+  {id: 2, name: 'wineGlass', path: '/images/wine6.jpg'},
+  {id: 3, name: 'wineCan', path: '/images/wine7.jpg'},
+  {id: 4, name: 'wineGlass', path: '/images/wine9.png'},
+  {id: 5, name: 'wineCan', path: '/images/wine10.png'}
 ])
 # Create our users
 User.create([
@@ -13,6 +16,7 @@ User.create([
 Post.create([
   {id: 1, title: 'Hello World', body: 'Hello World', image: '/images/HelloWorld.jpg', user_id: 1 }
 ])
+# comments
 Comment.create([
   {id: 1, body: 'Hello World', user_id: 2, post_id: 1}
 	])

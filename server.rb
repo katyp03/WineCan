@@ -10,6 +10,7 @@ before do
 	if session[:user_id]
 		@current_user = User.find(session[:user_id])
 	end
+	# @avatar = Avatar.find_by(id: params[:avatar_id])
 end
 
 get '/' do
@@ -17,6 +18,7 @@ get '/' do
   @last_post = Post.last.id
   @post = Post.find(@last_post)
   erb :home
+
 end
 
 post '/sign_in' do
