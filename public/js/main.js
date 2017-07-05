@@ -3,11 +3,15 @@ var newCanBtn,
 document.addEventListener("DOMContentLoaded", function() {
   	var newCanBtn = document.getElementById('newPost');
   	var newCanFrm = document.getElementById('postNew');
+
   	newCanBtn.addEventListener("click", function() {
   		newCanFrm.classList.remove("off");
   		newCanFrm.classList.add("on");
   	});
 });
+
+var year = new Date().getFullYear();
+document.querySelector("#year").innerHTML = year;
 
 var newSubmit,
 	exitButton,
@@ -23,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function(){
 		myModal.className = "off";
 	})
 });
+
+
   document.getElementById("editButton").addEventListener("click", function(){
 	document.querySelectorAll(".content").forEach(element => element.style.display="none");
 	document.querySelectorAll(".editForm").forEach(element => element.style.display="inline-block");
