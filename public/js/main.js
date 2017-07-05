@@ -14,7 +14,7 @@ var newSubmit,
 document.addEventListener("DOMContentLoaded", function(){
 	newSubmit = document.getElementById('newSubmit');
 	exitButton = document.getElementById('exitButton');
-	myModal = document.getElementById('newCanForm');
+	myModal = document.getElementById('postNew');
 	exitButton.addEventListener("click", function(){
 		myModal.className = "off";
 	});
@@ -23,7 +23,6 @@ document.addEventListener("DOMContentLoaded", function(){
 	})
 });
   document.getElementById("editButton").addEventListener("click", function(){
-	console.log("so far so good");
-	document.querySelectorAll(".postContent").forEach(element => element.style.display="none");
+	document.querySelectorAll(".content").forEach(element => element.style.display="none");
 	document.querySelectorAll(".editForm").forEach(element => element.style.display="inline-block");
 });

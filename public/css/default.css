@@ -202,6 +202,12 @@ img.avatarPics {
 #profileBioText {
 	font-family: 'Quicksand', sans-serif;
 }
+.bioForm {
+	display: none;
+}
+.bioFormLabel {
+	display: none;
+}
 /*end of profile page*/
 
 /*in post page:*/
