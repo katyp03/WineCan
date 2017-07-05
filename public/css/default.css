@@ -315,7 +315,7 @@ img.avatarPics {
 footer .container {
 	width: 100%;
 	bottom: 0;
-	position: absolute;
+	position: fixed;
 	font-family: 'Amatic SC', cursive;
 	font-size: 30px;
 	padding-top: 7px;
