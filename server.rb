@@ -73,3 +73,9 @@ get '/post/:post' do
 	
 	erb :post
 end
+get '/post/:post/delete' do
+@post = Post.find_by(id: params[:post])
+@user = User.find_by(id: @post.user_id).username
+@post.destroy
+redirect '/user/' + @user
+end

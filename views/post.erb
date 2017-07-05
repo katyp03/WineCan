@@ -1,6 +1,10 @@
 <h2><%= @post.title %></h2>
+<p>by <%= User.find_by(@post.user_id).username %></p>
 <img src="<%= @post.image %>">
 <p><%= @post.body %></p>
+<%= if User.find_by(@post.user_id).id == @current_user.id %>
+<p class="delete"><a href="/post/<%= @post.id %>/delete">delete this post</a></p>
+<% end %>
 <% @post.comments.each do |comment| %>
 <% @comment_user = User.find_by(id: comment.user_id) %>
 <li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></li>
