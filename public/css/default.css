@@ -172,6 +172,21 @@ img.avatarPics {
 	float: left;
 	margin-left: 100px;
 }
+
+#profileUserText {
+	color: #800028;
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 30px;
+}
+
+#profileHometownText {
+	font-family: 'Permanent Marker', cursive;
+	font-size: 20px;
+}
+
+#profileBioText {
+	font-family: 'Quicksand', sans-serif;
+}
 /*end of profile page*/
 
 /*in post page:*/
@@ -182,7 +197,29 @@ img.avatarPics {
 }
 
 #postBody {
-	font-family: 'Antic', sans-serif;
+	font-family: 'Quicksand', sans-serif;
+}
+
+.avImg {
+	height: 60px;
+	width: 60px;
+}
+
+#postImg, #postAllText {
+	float: left;
+}
+
+#postImg {
+	width: 600px;
+	margin-left: 80px;
+}
+
+#postAllText {
+	width: 400px;
+}
+
+#postPic {
+	width: 500px;
 }
 /*end of post page styling*/
 
