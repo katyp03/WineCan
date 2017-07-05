@@ -25,14 +25,18 @@
 	<% @comment_user = User.find_by(id: comment.user_id) %>
 		<li><span id="commentText"><%= comment.body %> - </span><span id="commentUsername"><a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></span>
 		<% if @comment_user == @current_user %>
-		<a href="/comment/<%= comment.id %>/delete">delete comment</a>
+		<br />
+		<span id="deleteComment"><a href="/comment/<%= comment.id %>/delete">(too much wine? delete comment)</a></span>
 		<% end %>
 		</li>
 <% end %>
 <% if @current_user %>
+	<br /><br /><br />
 	<form method="POST" action="/comment">
 		<label for="comment"><span id="askComment">What do you think?</span></label>
+		<br />
 		<textarea name="body" id="comment"></textarea>
+		<br />
 		<input type="text" class="hidden" name="post_id" value="<%= @post.id %>">
 		<input type="submit">
 	</form>

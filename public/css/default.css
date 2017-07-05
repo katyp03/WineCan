@@ -131,20 +131,32 @@ img.avatarPics {
 }
 
 #postNew.on {
-	width: 530px;
-	height: 300px;
+	width: 400px;
+	height: 400px;
 	padding-top: 10px;
 	padding-bottom: 30px;
 	font-size: 22px;
 	text-align: center;
 	border: 2px solid #808080;
+	border-radius: 60px;
 	display: inline-block;
 	position:fixed;
 	top:50%;
 	left:50%;
-	margin-left:-265px;
-	margin-top:-150px;
-	background-color: rgba(255, 255, 255, 0.8);
+	margin-left:-200px;
+	margin-top:-250px;
+	background-color: rgb(255, 255, 230);
+	z-index: 1;
+}
+
+#postNew.on #enterBody {
+  	width: 300px;
+  	height: 130px;
+  	resize: none;
+}
+
+#newText {
+	margin-bottom: 7px;
 }
 
 #newText, #recentText {
@@ -213,6 +225,7 @@ img.avatarPics {
 
 #postBody {
 	font-family: 'Quicksand', sans-serif;
+	font-size: 22px;
 }
 
 #commentText {
@@ -233,7 +246,22 @@ img.avatarPics {
 }
 
 #askComment {
-	font-family: 'Quicksand', sans-serif;
+	font-family: 'Permanent Marker', cursive;
+	font-size: 22px;
+}
+
+#deleteComment a:link {
+	font-family: 'Amatic SC', cursive;
+	text-decoration: none;
+	color: #800000;
+	font-size: 24px;
+}
+
+#deleteComment a:hover {
+	font-family: 'Amatic SC', cursive;
+	text-decoration: underline;
+	color: #330000;
+	font-size: 26px;
 }
 
 .avImg {
@@ -243,8 +271,7 @@ img.avatarPics {
 
 #bodyDiv, #commentDiv {
 	float: right;
-	border: 2px solid black;
-	/*clear: right;*/
+	/*border: 2px solid black;*/
 }
 
 #postImg {
@@ -252,15 +279,17 @@ img.avatarPics {
 	height: 470px;
 	margin-left: 80px;
 	float: left;
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 }
 
 #commentDiv {
-	width: 350px;
+	width: 410px;
+	text-align: center;
 }
 
 #bodyDiv {
 	width: 450px;
+	margin-bottom: 40px;
 }
 
 #postPic {
