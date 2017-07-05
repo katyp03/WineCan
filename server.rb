@@ -75,10 +75,19 @@ get '/post/:post' do
 	@user = User.find_by(id: @post.user_id)
 	erb :post
 end
-
+post '/post/:post/update' do
+	@post = Post.find_by(id: params[:post])
+	@post.update(title: params[:newTitle], image: params[:newImage], body: params[:newBody])
+end
 get '/post/:post/delete' do
-@post = Post.find_by(id: params[:post])
-@user = User.find_by(id: @post.user_id).username
-@post.destroy
-redirect '/user/' + @user
+	@post = Post.find_by(id: params[:post])
+	@user = User.find_by(id: @post.user_id).username
+	@post.destroy
+	redirect '/user/' + @user
+end
+get '/comment/:comment/delete' do
+	@comment = Comment.find_by(id: params[:comment])
+	@post = Post.find_by(id: @comment.post_id).id
+	@comment.destroy
+	redirect '/post/' + @post
 end
