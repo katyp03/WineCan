@@ -1,14 +1,16 @@
 <% if @current_user %>
-<h2>Most Recent Posts</h2>
+<div id="recentDiv">
+	<h2 id="recentText">Most Recent Posts</h2>
 <% while @i < 10 && @last_post > 0 %>
-<li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %></a></li>
+	<li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %></a></li>
 <% @i = @i + 1 %>
 <% @last_post = @last_post - 1 %>
+</div>
 <% end %>
 <% else %>
 <div id="signupForm">
-<h2>Welcome to WineCan!</h2>
-<h3>Sign up</h3>
+<h2 id="welcome">Welcome to WineCan!</h2>
+<h3 class="marker">Sign up</h3>
 <form method="POST" action="/newuser">
 	<label for="email">Email</label><br />
 	<input type="email" name="email"><br />
@@ -16,12 +18,12 @@
 	<input type="text" name="username"><br />
 	<label for="password">Password</label><br />
 	<input type="password" name="password"><br />
-	<h4>Tell us about yourself!</h4>
+	<h3 class="marker">Tell us about yourself!</h3>
 	<label for="hometown">Hometown</label><br />
 	<input type="text" name="hometown"><br />
 	<label for="bio">Bio</label><br />
 	<textarea name="bio"></textarea><br />
-	<h4>Pick an Avatar!</h4>
+	<h3 class="marker">Pick an Avatar!</h3>
 	<div id="avAssign">
   		<div class="avGroup">
     		<label for="avRadio1"><img src="images/wine5.JPG" class="avatarPics" /></label>

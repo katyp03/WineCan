@@ -19,22 +19,66 @@
 	text-align: right;
 }
 
-header {
-	border-bottom: 3px solid #808080;
+#signinForm label, #searchForm label {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 18px;
+	color: #800028;
 }
 
-#user_control #headerUsername {
+header {
+	border-bottom: 3px solid #808080;
+	background-color: rgba(255, 230, 230, 0.3);
+}
+
+#headerUsername {
 	text-align: right;
+}
+
+#user_control {
+	text-align: left;
+}
+
+h3.marker {
+	margin-bottom: 5px;
+}
+
+#user_control, #user_control a:link, a:visited {
+	text-decoration: none;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 20px;
+	color: #800028;
+}
+
+#user_control a:hover {
+	text-decoration: underline;
+	color: #660020;
 }
 /*end of header*/
 
 /*in home (when user isn't logged in):*/
+#signupForm #welcome {
+	font-family: 'Quicksand', sans-serif;
+}
+
+#welcome {
+	color: #800028;
+}
+
+.marker {
+	font-family: 'Permanent Marker', cursive;
+}
+
+#signupForm label {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 18px;
+}
+
 #signupForm, #homeWine {
 	float: left;
 }
 
 #signupForm {
-	margin-left: 80px;
+	margin-left: 100px;
 }
 
 #homePic {
@@ -59,6 +103,50 @@ img.avatarPics {
 }
 /*end of avatars*/
 /*end of home (user not logged in)*/
+
+/*in home (when user IS logged in):*/
+#newText, #recentText {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 25px;
+	color: #800028;
+}
+
+#newPost label {
+	font-family: 'Quicksand', sans-serif;
+	font-size: 18px;
+}
+
+.postNew, #recentDiv {
+	float: left;
+}
+
+.postNew {
+	margin-left: 120px;
+	width: 250px;
+}
+
+#recentDiv {
+	margin-left: 120px;
+}
+
+#recentDiv li a:link {
+	text-align: left;
+	text-decoration: none;
+	color: #800028;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#recentDiv li a:visited {
+	color: #660020;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#recentDiv li a:hover {
+	text-decoration: underline;
+	color: #660020;
+	font-family: 'Quicksand', sans-serif;
+}
+/*end of home (when user IS logged in)*/
 
 /*in footer:*/
 footer {
