@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+<% if @user == @current_user %>
+<p class="delete"><a href="/post/<%= @post.id %>/delete">delete this post</a></p>
+<% end %>
+<h2 id="postTitle"><%= @post.title %></h2>
+<p>by <%= @user.username %>
+<img src="<%= @post.image %>">
+<p id="postBody"><%= @post.body %></p>
+=======
 
 <%= if User.find_by(@post.user_id).id == @current_user.id %>
 <p class="delete"><a href="/post/<%= @post.id %>/delete">delete this post</a></p>
@@ -11,6 +20,7 @@
 	<% @post.comments.each do |comment| %>
 	<% @comment_user = User.find_by(id: comment.user_id) %>
 		<li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></li>
+>>>>>>> 6a993f59c3c2268f07e9343cf8498dff3d7f4ae0
 <% @post.comments.each do |comment| %>
 <% @comment_user = User.find_by(id: comment.user_id) %>
 <li><%= comment.body %> - <a href='/user/<%= @comment_user.username %>'><img src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></li>
