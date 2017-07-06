@@ -200,15 +200,16 @@ img.avatarPics {
 #profileDiv, #userRecents {
 	float: left;
 	margin-left: 160px;
-	margin-top: 50px;
 }
 
 #profileDiv {
 	width: 300px;
+	margin-top: 50px;
 }
 
 #userRecents {
 	width: 350px;
+	margin-top: 100px;
 }
 
 #profileUserText {
