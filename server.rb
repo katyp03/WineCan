@@ -1,6 +1,8 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-set :database, {adapter: "sqlite3", database: "db/wineCan.db"}
+configure :development, :test do
+	set :database, {adapter: "sqlite3", database: "db/wineCan.db"}
+end
 require './models'
 require 'sinatra/flash'
 require 'bundler/setup'
