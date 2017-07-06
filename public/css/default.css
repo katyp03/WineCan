@@ -19,6 +19,20 @@ a:hover {
 	font-size: 22px;
 }
 
+#searchSubmit {
+	margin-top: 3px;
+    background-image: url(/images/winesearch.png);
+    height: 30px;
+    width: 30px;
+    border-bottom: none;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    display: inline-block;
+    color: transparent;
+}
+
 #signinForm {
 	text-align: right;
 }
