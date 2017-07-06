@@ -1,12 +1,16 @@
 <% if @current_user %>
 <div id="recentDiv">
 	<h2 id="recentText">Most Recent Posts</h2>
-<% while @i < 10 && @last_post > 0 %>
-	<li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %></a></li>
-<% @i = @i + 1 %>
-<% @last_post = @last_post - 1 %>
+  <% while @i < 10 %>
+  <% if Post.exists?(@last_post) %>
+	  <li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %></a></li>
+    <% else %>
+    <% @i =@i -1 %>
+  <% end %>
+    <% @i = @i + 1 %>
+    <% @last_post = @last_post - 1 %>
+  <% end %>
 </div>
-<% end %>
 <% else %>
 <div id="signupForm">
 <h2 id="welcome">Welcome to WineCan!</h2>
