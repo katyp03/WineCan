@@ -28,6 +28,15 @@ document.addEventListener("DOMContentLoaded", function(){
 	})
 });
 
+  document.getElementById("deleteAccount").addEventListener("click", function(){
+  	if (confirm("Are you sure you want to delete your account?" )){
+  		window.location = "/deleteAccount"
+  	}
+  	else{
+  		alert("wise decision")
+  	}
+
+  })
 
   document.getElementById("editButton").addEventListener("click", function(){
 	document.querySelectorAll(".content").forEach(element => element.style.display="none");
