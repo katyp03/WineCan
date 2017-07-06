@@ -40,6 +40,6 @@ document.addEventListener("DOMContentLoaded", function(){
 
   document.getElementById("editButton").addEventListener("click", function(){
 	document.querySelectorAll(".content").forEach(element => element.style.display="none");
-	document.querySelectorAll(".editForm").forEach(element => element.style.display="inline-block");
-	document.querySelectorAll(".editFormLabel").forEach(element => element.style.display="inline-block");
+	document.querySelectorAll(".editForm").forEach(element => element.style.display="block");
+	document.querySelectorAll(".editFormLabel").forEach(element => element.style.display="block");
 });

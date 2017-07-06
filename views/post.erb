@@ -4,19 +4,18 @@
 <% end %>
 <form method="POST" action="/post/<%= @post.id %>/update">
 <h2 class="content" id="postTitle"><%= @post.title %> by <%= @user.username %></h2>
-<label for = "newTitle" class="editFormLabel">New Title</label><br />
-<input type="text" name="newTitle" class="editForm" value="<%= @post.title %>"><br /><br />
-<div class="content" id="postImg">
-	<img id="postPic" src="<%= @post.image %>">
+<label for = "newTitle" class="editFormLabel">New Title</label>
+<input type="text" name="newTitle" class="editForm" value="<%= @post.title %>">
+<div class="content" id="postImg" style="background-image:url(<%= @post.image %>)">
 </div>
-<label for="newImage" class="editFormLabel">New Image</label><br />
-<input type="text" name="newImage" class="editForm" value="<%= @post.image %>"><br /><br />
-<label for="newBody" class="editFormLabel">New Body</label><br />
-<textarea name="newBody" class="editForm"><%= @post.body %></textarea><br /><br />
+<label for="newImage" class="editFormLabel">New Image</label>
+<input type="text" name="newImage" class="editForm" value="<%= @post.image %>">
+<label for="newBody" class="editFormLabel">New Body</label>
+<textarea name="newBody" class="editForm"><%= @post.body %></textarea>
 <input type="submit" class="editForm">
 <div id="bodyDiv">
 	<p class="content" id="postBody"><%= @post.body %></p>
-	<p><a class="backnext" href="/post/<% if @post.id > 0 && Post.exists?(@post.id-1) %><%= Post.find(@post.id - 1).id %><% else %><%= @post.id %><% end %>">< Previous Post</a> <a class="backnext" href="/post/<% if @post.id < Post.last.id %><%= Post.find(@post.id + 1).id %><% else %><%= @post.id %><% end %>"> Next Post ></a></p>
+	<p><a class="backnext content" href="/post/<% if @post.id > 0 && Post.exists?(@post.id-1) %><%= Post.find(@post.id - 1).id %><% else %><%= @post.id %><% end %>">< Previous Post</a> <a class="backnext content" href="/post/<% if @post.id < Post.last.id %><%= Post.find(@post.id + 1).id %><% else %><%= @post.id %><% end %>"> Next Post ></a></p>
 </div>
 </form>
   <div id="commentDiv" class="content">

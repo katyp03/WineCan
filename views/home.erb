@@ -1,15 +1,17 @@
 <% if @current_user %>
 <div id="recentDiv">
 	<h2 id="recentText">Most Recent Posts</h2>
+	<ul>
   <% while @i < 10 %>
   <% if Post.exists?(@last_post) %>
-	  <li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %> - <%= User.find( Post.find(@last_post).user_id).username %></a></li>
+	  <li class="thumbnail" style="background-image:url(<%= Post.find(@last_post).image %>)"><a class="recentTen" href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %> - <%= User.find( Post.find(@last_post).user_id).username %></a></li>
     <% else %>
     <% @i = @i -1 %>
   <% end %>
     <% @i = @i + 1 %>
     <% @last_post = @last_post - 1 %>
   <% end %>
+  	</ul>
 </div>
 <% else %>
 <div id="signupForm">
