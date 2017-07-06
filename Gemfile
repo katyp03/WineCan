@@ -2,7 +2,12 @@ source 'http://rubygems.org'
 
 gem 'sinatra'
 gem 'sinatra-activerecord'
-gem 'sqlite3'
+group :development, :test do
+	gem 'sqlite3'
+end
+group :production do
+	gem 'pg'
+end
 gem 'rake'
 gem 'sinatra-flash'
 gem 'rerun'
