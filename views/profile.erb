@@ -1,11 +1,11 @@
 <div id="profileDiv">
-	<h2 id="profileUserText"><%= @user.username %></h2>
+	<h2 id="profileUserText"><%= @user.username %></h2><img id="profileAv" class="avImg" src=" <%= Avatar.find_by(id: @user.avatar_id).path %> ">
 	<form method="POST" action="/user/<%= @user.username %>/update">
 		<p id="profileHometownText" class="content"><%= @user.hometown %></p>
-		<label for="newHometown" class="bioFormLabel">Hometown</label><br />
+		<label for="newHometown" class="editFormLabel">Hometown</label><br />
 		<input type="text" name="newHometown" class="editForm" value="<%= @user.hometown %>"><br /><br />
 		<p id="profileBioText" class="content"><%= @user.bio %></p>
-		<label for="newBio" class="bioFormLabel">Bio</label><br />
+		<label for="newBio" class="editFormLabel">Bio</label><br />
 		<textarea name="newBio" class="editForm"><%= @user.bio %></textarea><br /><br />
 		<input type="submit" class="editForm">
 	</form>
