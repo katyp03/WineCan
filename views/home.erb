@@ -3,9 +3,9 @@
 	<h2 id="recentText">Most Recent Posts</h2>
   <% while @i < 10 %>
   <% if Post.exists?(@last_post) %>
-	  <li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %></a></li>
+	  <li><a href="/post/<%= @last_post %>"><%= Post.find(@last_post).title %> - <%= User.find( Post.find(@last_post).user_id).username %></a></li>
     <% else %>
-    <% @i =@i -1 %>
+    <% @i = @i -1 %>
   <% end %>
     <% @i = @i + 1 %>
     <% @last_post = @last_post - 1 %>

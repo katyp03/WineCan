@@ -3,7 +3,7 @@
 <p class="delete" id="deleteButton"><a href="/post/<%= @post.id %>/delete">  Delete</a></p>
 <% end %>
 <form method="POST" action="/post/<%= @post.id %>/update">
-<h2 class="content" id="postTitle"><%= @post.title %></h2>
+<h2 class="content" id="postTitle"><%= @post.title %> by <%= @user.username %></h2>
 <label for = "newTitle" class="editFormLabel">New Title</label><br />
 <input type="text" name="newTitle" class="editForm" value="<%= @post.title %>"><br /><br />
 <div class="content" id="postImg">
@@ -21,7 +21,7 @@
   <div id="commentDiv" class="content">
 	<% @post.comments.each do |comment| %>
 	<% @comment_user = User.find_by(id: comment.user_id) %>
-		<li><span id="commentText"><%= comment.body %> - </span><span id="commentUsername"><a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></span>
+		<li><span id="commentText"><%= comment.body %> - </span><br/><span id="commentUsername"><a href='/user/<%= @comment_user.username %>'><img class="avImg" src=" <%= Avatar.find_by(id: @comment_user.avatar_id).path %> "><%= @comment_user.username %></a></span>
 		<% if @comment_user == @current_user %>
 		<br />
 		<span id="deleteComment"><a href="/comment/<%= comment.id %>/delete">(too much wine? delete comment)</a></span>
