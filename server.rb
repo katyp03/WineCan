@@ -16,7 +16,6 @@ end
 get '/' do
   @i =0
   @last_post = Post.last.id
-  @post = Post.find(@last_post)
   erb :home
 
 end
@@ -100,6 +99,7 @@ end
 
 get '/deleteAccount' do
 @current_user.destroy
+
 session[:user_id] = nil
 redirect '/'
 end
