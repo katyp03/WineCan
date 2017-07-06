@@ -190,23 +190,46 @@ img.avatarPics {
 
 #recentDiv {
 	margin-left: 120px;
+	width: 850px;
 }
 
-#recentDiv li a:link, #userRecents li a:link {
+.thumbnail {
+	width: 150px;
+	height: 150px;
+	background-size: cover;
+	display: inline-block;
+	/*vertical-align: middle;
+	text-align: center;*/
+	color: #fff;
+}
+
+.recentTen{
+	width: 100%;
+	height: 100%;
+	display: block;
+	vertical-align: middle;
+	text-align: center;
+	color: #fff;
+}
+
+#recentDiv li a:link {
 	text-align: left;
 	text-decoration: none;
-	color: #800028;
+	color: #fff;
 	font-family: 'Quicksand', sans-serif;
+	background-color: rgba(150,150,150,.4);
 }
 
-#recentDiv li a:visited, #userRecents li a:visited {
-	color: #660020;
+#recentDiv li a:visited {
+	color: #fff;
 	font-family: 'Quicksand', sans-serif;
+	background-color: rgba(150,150,150,.4);
 }
 
 #recentDiv li a:hover {
 	text-decoration: underline;
 	font-family: 'Quicksand', sans-serif;
+	background-color: rgba(150,150,150,0);
 }
 /*end of home (when user IS logged in)*/
 
@@ -224,6 +247,18 @@ img.avatarPics {
 #userRecents {
 	width: 350px;
 	margin-top: 100px;
+}
+
+#userRecents li a:link {
+	text-align: left;
+	text-decoration: none;
+	color: #800028;
+	font-family: 'Quicksand', sans-serif;
+}
+
+#userRecents li a:visited {
+	color: #660020;
+	font-family: 'Quicksand', sans-serif;
 }
 
 #profileUserText {
@@ -258,7 +293,7 @@ img.avatarPics {
 	color: #800028;
 	font-family: 'Julius Sans One', sans-serif;
 	font-size: 30px;
-	margin-bottom: 0px;
+	margin-bottom: 10px;
 }
 
 #postBody {
@@ -270,6 +305,7 @@ img.avatarPics {
 .backnext {
 	text-decoration: none;
 	margin: 5px 50px;
+	font-family: 'Quicksand', sans-serif;
 }
 
 #commentText {
@@ -318,10 +354,12 @@ img.avatarPics {
 }
 
 #postImg {
-	width: 390px;
-	height: 390px;
+	width: 410px;
+	height: 410px;
 	margin-left: 80px;
 	float: left;
+	background-size: contain;
+	background-repeat: no-repeat;
 }
 
 #commentDiv {
@@ -334,15 +372,12 @@ img.avatarPics {
 	margin-bottom: 40px;
 }
 
-#postPic {
-	width: 380px;
-}
-
 .editForm {
 	display: none;
 }
 
 .editFormLabel {
+	margin-top: 18px;
 	display: none;
 }
 
@@ -375,6 +410,4 @@ footer .container {
 	margin-top: 7px;
 	margin-bottom: 7px;
 }
-
-
 /*end of footer
