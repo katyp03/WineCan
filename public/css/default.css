@@ -267,6 +267,11 @@ img.avatarPics {
 	margin-top: 0px;
 }
 
+.backnext {
+	text-decoration: none;
+	margin: 5px 50px;
+}
+
 #commentText {
 	font-family: 'Julius Sans One', sans-serif;
 	color: #660020;
