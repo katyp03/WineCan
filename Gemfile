@@ -10,5 +10,5 @@ group :production do
 end
 gem 'rake'
 gem 'sinatra-flash'
-gem 'rerun'
-gem 'puma'
+# gem 'rerun'
+# gem 'puma'
