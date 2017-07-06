@@ -332,7 +332,12 @@ img.avatarPics {
 	margin-bottom: 5px;
 }
 /*end of post page styling*/
-
+/*spacer*/
+#spacer{
+	height: 100px;
+	clear: both;
+	background-color: rgba(255,255,255,0);
+}
 /*in footer:*/
 footer .container {
 	width: 100%;
