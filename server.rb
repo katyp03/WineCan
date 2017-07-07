@@ -104,9 +104,8 @@ get '/comment/:comment/delete' do
 end
 
 get '/deleteAccount' do
-@current_user.destroy
-
-session[:user_id] = nil
-redirect '/'
+	@current_user.destroy
+	session[:user_id] = nil
+	redirect '/'
 end
 
