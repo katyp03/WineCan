@@ -15,7 +15,6 @@
 <input type="submit" class="editForm">
 <div id="bodyDiv">
 	<p class="content" id="postBody"><%= @post.body %></p>
-	<p><a class="backnext content" href="/post/<% if @post.id > 0 && Post.exists?(@post.id-1) %><%= Post.find(@post.id - 1).id %><% else %><%= @post.id %><% end %>">< Previous Post</a> <a class="backnext content" href="/post/<% if @post.id < Post.last.id %><%= Post.find(@post.id + 1).id %><% else %><%= @post.id %><% end %>"> Next Post ></a></p>
 </div>
 </form>
   <div id="commentDiv" class="content">

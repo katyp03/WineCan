@@ -302,12 +302,6 @@ img.avatarPics {
 	margin-top: 0px;
 }
 
-.backnext {
-	text-decoration: none;
-	margin: 5px 50px;
-	font-family: 'Quicksand', sans-serif;
-}
-
 #commentText {
 	font-family: 'Julius Sans One', sans-serif;
 	color: #660020;
@@ -355,7 +349,7 @@ img.avatarPics {
 
 #postImg {
 	width: 410px;
-	height: 410px;
+	/*height: 410px;*/
 	margin-left: 80px;
 	float: left;
 	background-size: contain;
