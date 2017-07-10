@@ -104,8 +104,19 @@ get '/comment/:comment/delete' do
 end
 
 get '/deleteAccount' do
-	@current_user.destroy
-	session[:user_id] = nil
-	redirect '/'
+  	@user = @current_user
+  	User.transaction do
+    	@user.posts.each{ |post| post.comments.destroy_all }
+    	@user.posts.destroy_all
+    	@user.comments.destroy_all
+    	@user.destroy
+  	end
+  	if User.where( id: @user.id).empty?
+    	flash[:message] = "Profile deleted"
+    	session[:user_id] = nil
+    	redirect '/'
+  	else
+    	flash[:message] = "Couldn't delete this profile"
+    	redirect '/profile'
+  	end
 end
-
